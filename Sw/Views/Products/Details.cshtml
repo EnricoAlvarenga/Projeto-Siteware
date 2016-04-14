@@ -1,0 +1,92 @@
+﻿@model Sw.Data.Product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div>
+  <h4>Detalhe: @Html.DisplayFor(model => model.Name)</h4>
+  <hr />
+  <form action="~/Products/Details" method="post">    
+    @Html.HiddenFor(model => Model.Id)
+    <div class="row">
+      <div class="col-md-4">
+        <img src="http://www.markettheme.com/wp-content/themes/new-market/images/product-to-sell-large.png" class="img-responsive">
+        <div class="row">
+          <dl class="dl-horizontal">
+            <dt>
+              @Html.DisplayNameFor(model => model.Price)
+            </dt>
+
+            <dd>
+              @Html.DisplayFor(model => model.Price)
+            </dd>
+
+            <dt>
+              @Html.DisplayNameFor(model => model.Promotion)
+            </dt>
+
+            <dd>
+              @Html.DisplayFor(model => model.Promotion)
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tortor enim,
+          adipiscing in semper a, pellentesque quis sem. Vivamus eu odio at tellus sollicitudin
+          viverra. Sed dignissim molestie imperdiet. Nulla sit amet tortor eu nisl vestibulum
+          dignissim. Donec scelerisque vulputate tortor, non dapibus massa molestie at. Pellentesque
+          habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+          Etiam a mauris sit amet augue suscipit dapibus non in lectus. Nunc mattis eros ligula,
+          ut tincidunt sapien. Nulla eget velit ipsum. Suspendisse potenti. Suspendisse et
+          sem at sem sagittis lobortis. Quisque lacinia, nisl in elementum aliquet, arcu neque
+          rhoncus tellus, at ornare mi enim sit amet sem. Phasellus a nisi vel ipsum laoreet
+          mollis.
+        </p>
+        <p>
+          In hac habitasse platea dictumst. Aliquam erat volutpat. Vestibulum massa dui, mattis
+          eget consectetur a, scelerisque vitae eros. Duis ut ligula nulla. Aenean varius
+          odio in eros consectetur tincidunt. Etiam faucibus odio non turpis aliquet viverra.
+          Morbi quis massa a velit fermentum vehicula. Quisque felis turpis, consequat eget
+          rutrum et, placerat id orci. Pellentesque risus orci, vestibulum ac adipiscing et,
+          scelerisque vitae ligula. Morbi fermentum, nisl tincidunt mollis rhoncus, elit ipsum
+          porttitor tortor, eu molestie turpis nisl quis mi. In sit amet lorem massa. Aenean
+          nisl massa, laoreet a egestas sit amet, pellentesque a quam. Quisque sit amet tortor
+          sit amet risus interdum volutpat eget a turpis. Mauris suscipit commodo ligula,
+          sed suscipit arcu tristique eget. Integer mattis nisl vitae purus posuere malesuada
+          ornare nibh ornare. Aliquam erat volutpat. Proin aliquam elit sit amet ante pharetra
+          dictum. Sed malesuada sollicitudin sodales.
+        </p>
+        <div class="pull-right">
+          <input type="number" id="Quantity" name="Quantity" class="input-sm" min="1" value="1" />
+          <button id="addCart" type="submit" class="btn btn-success btn-sm"><i class="fa fa-cart-plus"></i> Add no Carrinho</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<p>
+  @Html.ActionLink("Voltar", "Products", "Home")
+</p>
+@section scripts
+ {
+  <script type="text/javascript">
+    //$("#addCart").on("click", function () {      
+    //  $.ajax({
+    //    url: '~/Products/Details/',
+    //    data: { products: $(form).serialize() },
+    //    type: 'POST',
+    //    async: true,
+    //    success: function (result) {
+    //      console.log('entrei');
+    //      $("#cartList").html(result);
+    //    },
+    //    error: function (xhr, ajaxOptions, thrownError) {
+    //      console.log('errror');
+    //    }
+    //  });
+    //});
+  </script>
+}

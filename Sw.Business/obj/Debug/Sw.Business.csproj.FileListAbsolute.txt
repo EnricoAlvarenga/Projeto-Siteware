@@ -1,0 +1,7 @@
+c:\Users\dell\documents\visual studio 2015\Projects\Sw\Sw.Business\bin\Debug\Sw.Business.dll
+c:\Users\dell\documents\visual studio 2015\Projects\Sw\Sw.Business\bin\Debug\Sw.Business.pdb
+c:\Users\dell\documents\visual studio 2015\Projects\Sw\Sw.Business\obj\Debug\Sw.Business.dll
+c:\Users\dell\documents\visual studio 2015\Projects\Sw\Sw.Business\obj\Debug\Sw.Business.pdb
+c:\Users\dell\documents\visual studio 2015\Projects\Sw\Sw.Business\obj\Debug\Sw.Business.csprojResolveAssemblyReference.cache
+C:\Users\dell\Documents\Visual Studio 2015\Projects\Sw\Sw.Business\bin\Debug\Sw.Data.dll
+C:\Users\dell\Documents\Visual Studio 2015\Projects\Sw\Sw.Business\bin\Debug\Sw.Data.pdb

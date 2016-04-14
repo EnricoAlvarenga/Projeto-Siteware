@@ -1,0 +1,36 @@
+﻿@model List<Sw.Data.Product>
+@{
+    ViewBag.Title = "Products";
+}
+
+<h2>Produtos</h2>
+
+<div class="container">
+@for ( int i = 0; i < Model.Count; i++ )
+{
+  <div class="row">
+    @for ( int j = 0; j < 3; j++ )
+    {
+      if ( i == Model.Count ) { continue; };
+      var product = Model[i];
+        <div class="col-md-4 column productbox">
+          <div>
+            <img src="http://www.markettheme.com/wp-content/themes/new-market/images/product-to-sell-large.png" class="img-responsive">            
+          </div>
+          <div class="producttitle">@product.Name@if ( product.Promotion != "Nenhuma" )
+          {
+              <i class="promotion"> (Promoção:@product.Promotion)</i>
+          } </div>
+          
+          <div class="productprice">
+          <div class="pull-right">           
+            <a href="~/Products/Details/@product.Id" class="btn btn-danger btn-sm" role="button">Comprar</a>
+            </div><div class="pricetext">R$@product.Price</div>
+          </div>        
+        </div>
+      i++;
+    }  
+  </div>
+  i--;
+}
+</div>

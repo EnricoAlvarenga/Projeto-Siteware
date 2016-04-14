@@ -1,0 +1,59 @@
+﻿@model List<Sw.Data.Product>
+@{
+    ViewBag.Title = "Cart";
+}
+
+<h2>Carrinho de Compras</h2>
+@if ( Model.Count() == 0 )
+{
+    <i>Carrinho de compras vazio.</i>
+}
+else
+{
+    <table class="table table-striped responsive-utilities jambo_table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Produto</th>
+          <th>Promoção</th>
+          <th>Preço(R$)</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        @{ var cont = 1;}
+        @foreach ( var item in Model )
+        {
+            <tr>
+              <th scope="row">@cont</th>
+              <td>@item.Name</td>
+              <td>@item.Promotion</td>
+              <td>@item.Price</td>
+              <td><button id="removeItem" class="btn btn-sm btn-danger" onclick="RemoveProduct(@cont)"><i class="fa fa-trash-o"></i>Remover</button></td>
+            </tr>
+
+          cont += 1;
+
+        }
+      </tbody>
+    </table>
+
+    <div class="row">
+      <a class="btn btn-lg btn-success" href="~/Products/Checkout">FINALIZAR COMPRA</a>
+    </div>
+            }
+@section scripts{
+  <script>
+    function RemoveProduct(id) {
+       $.ajax({
+        data: { id: id },
+        url: 'RemoveProduct',
+        method: 'POST',
+        success: function (data) {
+          $('body').html(data);
+        }
+      });
+    }       
+  </script>
+  }
+

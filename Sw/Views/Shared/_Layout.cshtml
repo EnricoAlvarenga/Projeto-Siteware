@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>@ViewBag.Title - My ASP.NET Application</title>
+  @Scripts.Render("~/Content/template")
+  @Styles.Render("~/Content/css")
+  @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body class="pace-done nav-md">
+  <div class="pace  pace-inactive">
+    <div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+      <div class="pace-progress-inner"></div>
+    </div>
+    <div class="pace-activity"></div>
+  </div>
+
+  <div class="container body">
+    <div class="main_container">
+
+      <div class="col-md-3 left_col">
+        <div class="left_col">
+
+          <div class="navbar nav_title" style="border: 0;">
+            <a href="index.html" class="site_title"><i class="fa fa-money"></i> <span>SW E-Commerce</span></a>
+          </div>
+          <div class="clearfix"></div>
+          <br />
+          <!-- sidebar menu -->
+          <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+
+            <div class="menu_section">
+              <h3>Menu</h3>
+              <ul class="nav side-menu">
+                <li class="active">
+                  <a href="~/Home/Products"><i class="fa fa-cart-plus"></i> Comprar</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- /sidebar menu -->
+        </div>
+      </div>
+
+      <!-- top navigation -->
+      <div class="top_nav">
+
+        <div class="nav_menu">
+          <nav class="" role="navigation">
+            <div class="nav toggle">
+              <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+              <li class="">
+                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                  Configuração
+                  <span class="fa fa-angle-down"></span>
+                </a>
+                <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
+                  <li>
+                    <a href="~/Products"><i class="fa fa-product-hunt"></i>  Cadastrar Produtos</a>
+                  </li>
+                </ul>
+              </li>
+
+              <li role="presentation" class="dropdown">
+                <a href="~/Products/Cart" class="info-number" aria-expanded="false">
+                  <i class="fa fa-opencart"></i>
+                  <span id="numberQuantity" class="badge bg-green">@Session["Count"]</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+      </div>
+      <!-- /top navigation -->
+      <!-- page content -->
+      <div class="right_col" role="main" style="min-height: 229px;">
+        <div id="main">
+          @RenderBody()
+        </div>
+      </div>
+      <!-- /page content -->
+    </div>
+  </div>
+
+  <div id="custom_notifications" class="custom-notifications dsp_none">
+    <ul class="list-unstyled notifications clearfix" data-tabbed_notifications="notif-group"></ul>
+    <div class="clearfix"></div>
+    <div id="notif-group" class="tabbed_notifications"></div>
+  </div>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@Scripts.Render("~/bundles/template")
+@RenderSection("scripts", required: false)
+</body>
+</html>

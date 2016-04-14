@@ -1,0 +1,38 @@
+﻿@model List<Sw.Business.ProductCheckout>
+@using Sw.Business
+@{
+    ViewBag.Title = "Checkout";
+}
+
+<h2>Checkout</h2>
+<table class="table table-striped responsive-utilities jambo_table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Produto</th>
+      <th>Promoção</th>
+      <th>Quantidade</th>
+      <th>Preço</th>
+    </tr>
+  </thead>
+  <tbody>
+@foreach ( var item in Model )
+{
+    <tr>
+      <td></td>
+      <td class="text-left">@item.Name</td>
+      <td>@item.Promotion</td>
+      <td>@item.Count</td>
+      <td>@item.Price</td>
+    </tr>
+}
+
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="row"><b>Total:</b></td>
+      <td><b>@ViewBag.Total</b></td>
+    </tr>
+  </tbody>
+</table>
